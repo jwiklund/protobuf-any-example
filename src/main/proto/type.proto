@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package born;
+option java_package = "so.born";
+option java_outer_classname = "Types";
+
+import "any.proto";
+
+message Home {
+  repeated google.protobuf.Any items = 1;
+}
+
+message Item {
+  string uri         = 1;
+  string title       =  2;
+  string subtitle  = 3;
+  string image    = 4;
+  string color       = 5;;
+}
+
+message Hero {
+  string uri         = 1;
+  string title       = 2;
+  string subtitle = 3;
+  string image   = 4;
+  string color     = 5;
+  repeated Item items = 6;
+}
+
+message Carousel {
+  string uri = 1;
+  string title = 2;
+  string subtitle = 3;
+  string image = 4;
+  string color = 5;
+  repeated Item items = 6;
+}
+
+message HomeSimple {
+  repeated ManualAny items = 1;
+}
+
+message ManualAny {
+  Hero hero = 1;
+  Carousel carousel = 2;
+}
